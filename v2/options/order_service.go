@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/Chief-Alchemist/go-binance/common"
+	"github.com/Chief-Alchemist/go-binance/v2/common"
 )
 
 // CreateOrderService create order

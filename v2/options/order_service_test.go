@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/Chief-Alchemist/go-binance/common"
+	"github.com/Chief-Alchemist/go-binance/v2/common"
 	"github.com/stretchr/testify/suite"
 )
 

@@ -1,4 +1,4 @@
-module github.com/Chief-Alchemist/go-binance
+module github.com/Chief-Alchemist/go-binance/v2
 
 go 1.18
 

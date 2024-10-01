@@ -5,7 +5,7 @@ import (
 
 	"net/http"
 
-	"github.com/Chief-Alchemist/go-binance/common"
+	"github.com/Chief-Alchemist/go-binance/v2/common"
 )
 
 type TradingDayTickerService struct {
