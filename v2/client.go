@@ -15,10 +15,10 @@ import (
 	"github.com/bitly/go-simplejson"
 	jsoniter "github.com/json-iterator/go"
 
-	"github.com/adshao/go-binance/v2/common"
-	"github.com/adshao/go-binance/v2/delivery"
-	"github.com/adshao/go-binance/v2/futures"
-	"github.com/adshao/go-binance/v2/options"
+	"github.com/Chief-Alchemist/go-binance/common"
+	"github.com/Chief-Alchemist/go-binance/delivery"
+	"github.com/Chief-Alchemist/go-binance/futures"
+	"github.com/Chief-Alchemist/go-binance/options"
 )
 
 // SideType define side type of order

@@ -9,28 +9,29 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/adshao/go-binance/v2/common"
+	"github.com/Chief-Alchemist/go-binance/common"
 )
 
 // CreateOrderService create order
 type CreateOrderService struct {
-	c                *Client
-	symbol           string
-	side             SideType
-	positionSide     *PositionSideType
-	orderType        OrderType
-	timeInForce      *TimeInForceType
-	quantity         string
-	reduceOnly       *string
-	price            *string
-	newClientOrderID *string
-	stopPrice        *string
-	workingType      *WorkingType
-	activationPrice  *string
-	callbackRate     *string
-	priceProtect     *string
-	newOrderRespType NewOrderRespType
-	closePosition    *string
+	c                       *Client
+	symbol                  string
+	side                    SideType
+	positionSide            *PositionSideType
+	orderType               OrderType
+	timeInForce             *TimeInForceType
+	quantity                string
+	reduceOnly              *string
+	price                   *string
+	newClientOrderID        *string
+	stopPrice               *string
+	workingType             *WorkingType
+	activationPrice         *string
+	callbackRate            *string
+	priceProtect            *string
+	newOrderRespType        NewOrderRespType
+	closePosition           *string
+	selfTradePreventionMode *SelfTradePreventionMode
 }
 
 // Symbol set symbol
@@ -132,6 +133,11 @@ func (s *CreateOrderService) ClosePosition(closePosition bool) *CreateOrderServi
 	return s
 }
 
+func (s *CreateOrderService) SelfTradePreventionMode(selfTradePreventionMode SelfTradePreventionMode) *CreateOrderService {
+	s.selfTradePreventionMode = &selfTradePreventionMode
+	return s
+}
+
 func (s *CreateOrderService) createOrder(ctx context.Context, endpoint string, opts ...RequestOption) (data []byte, header *http.Header, err error) {
 	r := &request{
 		method:   http.MethodPost,
@@ -179,6 +185,9 @@ func (s *CreateOrderService) createOrder(ctx context.Context, endpoint string, o
 	}
 	if s.closePosition != nil {
 		m["closePosition"] = *s.closePosition
+	}
+	if s.selfTradePreventionMode != nil {
+		m["selfTradePreventionMode"] = *s.selfTradePreventionMode
 	}
 	r.setFormParams(m)
 	data, header, err = s.c.callAPI(ctx, r, opts...)

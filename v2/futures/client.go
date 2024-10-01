@@ -15,7 +15,7 @@ import (
 
 	"github.com/bitly/go-simplejson"
 
-	"github.com/adshao/go-binance/v2/common"
+	"github.com/Chief-Alchemist/go-binance/common"
 )
 
 // SideType define side type of order
@@ -72,6 +72,9 @@ type UserDataEventReasonType string
 
 // ForceOrderCloseType define reason type for force order
 type ForceOrderCloseType string
+
+// SelfTradePreventionMode define self trade prevention mode
+type SelfTradePreventionMode string
 
 // Endpoints
 const (
@@ -189,6 +192,11 @@ const (
 	timestampKey  = "timestamp"
 	signatureKey  = "signature"
 	recvWindowKey = "recvWindow"
+
+	SelfTradePreventionModeNone        SelfTradePreventionMode = "NONE"
+	SelfTradePreventionModeExpireTaker SelfTradePreventionMode = "EXPIRE_TAKER"
+	SelfTradePreventionModeExpireMaker SelfTradePreventionMode = "EXPIRE_MAKER"
+	SelfTradePreventionModeExpireBoth  SelfTradePreventionMode = "EXPIRE_BOTH"
 )
 
 func currentTimestamp() int64 {

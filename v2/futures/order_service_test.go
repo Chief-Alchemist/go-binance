@@ -2,9 +2,10 @@ package futures
 
 import (
 	"context"
-	"github.com/adshao/go-binance/v2/common"
 	"strconv"
 	"testing"
+
+	"github.com/Chief-Alchemist/go-binance/common"
 
 	"github.com/stretchr/testify/suite"
 )
